@@ -1,8 +1,10 @@
+import { Button } from '@ui-kitten/components';
 import React from 'react'
 import { View, Text,Image ,StyleSheet, StatusBar, Dimensions} from 'react-native'
 import Onboarding from 'react-native-onboarding-swiper';
+import { Colors } from '../Colors';
 
-export default function OnboardingScreen() {
+export default function OnboardingScreen(props) {
     return (
     <View style={styles.container}>
     <StatusBar backgroundColor='#ffffff'/>
@@ -23,7 +25,7 @@ export default function OnboardingScreen() {
         <View style={{
             height:selected?15:10,
             width:selected?15:10,
-            backgroundColor:selected?'blue':'rgba(0,0,0,0.5)',
+            backgroundColor:selected?Colors.primary:'rgba(0,0,0,0.5)',
             borderRadius:20,
             margin:3
         }}/>
@@ -50,7 +52,18 @@ export default function OnboardingScreen() {
         ]}
       />
     </View>
+    <View style={styles.btn}>
+    <Button onPress={()=>{
+        props.navigation.navigate('SignUp')
+    }} style={[styles.bt,{
+        marginBottom:20
+    }]}>SIGN UP</Button>
+    <Button onPress={()=>{
+        props.navigation.navigate('LogIn')
+    }} appearance='outline' style={[styles.bt,{
         
+    }]}>LOG IN</Button>
+    </View>    
     </View>
     )
 }
@@ -72,5 +85,17 @@ const styles = StyleSheet.create({
     img:{
         height:Dimensions.get('window').height/3,
         width:Dimensions.get('window').width-20
+    },
+    btn:{
+        minHeight: 100,
+        width:'100%',
+        marginTop:'auto',
+        padding:10
+    },
+    bt:{
+     width:'90%',
+     marginLeft:'auto',
+     marginRight:'auto',
+     
     }
 })

@@ -6,11 +6,12 @@ import { ApplicationProvider,IconRegistry} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import RNBootSplash from "react-native-bootsplash";
 import IndexRoute from './App/routes/Index'
+import { default as theme } from './theme.json';
 export default function App() {
   return (
   <>
  <IconRegistry icons={EvaIconsPack} />
-  <ApplicationProvider {...eva} theme={eva.light}>
+  <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
     <NavigationContainer onReady={() => RNBootSplash.hide({ fade: true })}>
     <IndexRoute/>
     </NavigationContainer>

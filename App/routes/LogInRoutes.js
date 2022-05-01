@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import SignUpIndexScreen from '../screens/SignUpIndexScreen';
 import React from 'react'
+import LoginIndexScreen from '../screens/LoginIndexScreen';
 const Stack = createStackNavigator();
 
 function SignUpRoute() {
@@ -11,7 +11,7 @@ function SignUpRoute() {
         headerShown:false
       }
     }>
-      <Stack.Screen name="Home" component={SignUpIndexScreen} />
+      <Stack.Screen name="Home" component={LoginIndexScreen} />
     </Stack.Navigator>
   );
 }
