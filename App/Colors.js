@@ -8,7 +8,7 @@ export const Colors={
     darkGray:'#323338',
     lightGray:'#E6E9EF',
     wolfGray:'#C5C7D0',
-    midGray:'#323338',
+    midGray:'#d7d8da',
     successLight:'#CCF4E3',
     successHover:'#00A25B'
 

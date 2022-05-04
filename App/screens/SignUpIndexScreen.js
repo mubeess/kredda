@@ -18,7 +18,9 @@ export default function SignUpIndexScreen(props) {
       placeholder='Phone Number'
       onChangeText={nextValue => setPhone(nextValue)}
     />
-    <Button style={styles.btn}>SIGN UP</Button>
+    <Button onPress={()=>{
+        props.navigation.navigate('Verify')
+    }} style={styles.btn}>SIGN UP</Button>
         </View>
     )
 }
