@@ -3,7 +3,7 @@ import React from 'react'
 import { View,StyleSheet, StatusBar, Image } from 'react-native'
 import { Colors } from '../../Colors'
 
-export default function Verification() {
+export default function Verification(props) {
     return (
         <View style={styles.container}>
             <Text style={styles.txt} category='h3'>Number Verification</Text>
@@ -35,6 +35,9 @@ export default function Verification() {
                 style={styles.mainInp}
                 />
                  <Input
+                 onChangeText={(txt)=>{
+                props.navigation.navigate('Pin')
+                 }}
                   keyboardType='numeric'
                 style={styles.mainInp}
                 />

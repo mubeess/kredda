@@ -5,13 +5,12 @@ import { View,StyleSheet, StatusBar} from 'react-native'
 import { Colors } from '../Colors'
 import Header from '../components/Header'
 
-export default function LoginIndexScreen(props) {
+export default function ForgotPasswordIndex(props) {
     const [phone,setPhone]=useState('')
     return (
         <View style={styles.container}>
-        <Header back={()=>props.navigation.goBack()}/>
-        <Text style={styles.txt} category='h1'>Welcome Najeeb,</Text>
-        <Text appearance='hint'>Please login to your kredda account</Text>
+        <Text style={styles.txt} category='h4'>Forgot Password</Text>
+        <Text appearance='hint'>Please enter your registered email address to reset your PIN.</Text>
         <Input
         style={styles.inp}
       value={phone}
@@ -20,8 +19,8 @@ export default function LoginIndexScreen(props) {
       onChangeText={nextValue => setPhone(nextValue)}
     />
     <Button onPress={()=>{
-        props.navigation.navigate('Forgot')
-    }} style={styles.btn}>LOG IN</Button>
+        props.navigation.navigate('NewPin')
+    }} style={styles.btn}>PROCEED</Button>
         </View>
     )
 }
@@ -29,7 +28,10 @@ const styles = StyleSheet.create({
     container:{
     flex:1,
     paddingTop:StatusBar.currentHeight,
-    padding:10
+    padding:10,
+    paddingLeft:20,
+    paddingRight:20,
+    backgroundColor:'white'
     },
     txt:{
         color:Colors.primary
@@ -38,13 +40,15 @@ const styles = StyleSheet.create({
         marginTop:20,
         width:'93%',
         marginLeft:'auto',
-        marginRight:'auto'
+        marginRight:'auto',
+        backgroundColor:Colors.midGray
     },
     btn:{
-        marginTop:20,
+        marginTop:50,
         width:'93%',
         marginLeft:'auto',
-        marginRight:'auto'
+        marginRight:'auto',
+        
     }
    
 })
